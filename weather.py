@@ -124,8 +124,8 @@ def build_forecast_markdown():
         wind = daily["wind_speed_10m_max"][index]
         description = WEATHER_CODES.get(daily["weather_code"][index], "Нет данных")
 
-        t_max_text = "—" if t_max is None else f"{t_max:+.0f}°"
-        t_min_text = "—" if t_min is None else f"{t_min:+.0f}°"
+        t_max_text = "—" if t_max is None else f"{t_max:+.0f}°".replace("-", "−")
+        t_min_text = "—" if t_min is None else f"{t_min:+.0f}°".replace("-", "−")
         precipitation_text = "—" if precipitation is None else f"{precipitation}%"
         wind_text = "—" if wind is None else f"{wind:.1f} м/с"
 
@@ -139,6 +139,6 @@ def build_forecast_markdown():
         )
         lines.append("")
 
-    lines.append("[Open-Meteo](https://open-meteo.com)")
+    lines.append(f"[{_esc('Open-Meteo')}](https://open-meteo.com)")
 
     return "\n".join(lines)
