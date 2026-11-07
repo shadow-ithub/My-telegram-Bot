@@ -32,7 +32,7 @@
 ## Установка
 
 ```bash
-git clone [https://github.com/<your-username>/<repo-name>.git](https://github.com/shadow-ithub/My-telegram-Bot.git)
+git clone https://github.com/shadow-ithub/My-telegram-Bot.git
 cd My-telegram-Bot
 
 python -m venv .venv
